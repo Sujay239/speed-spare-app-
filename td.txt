@@ -1,3 +1,5 @@
 1. Authentication (Without logged in no user able to access the indx page)
 2. Remove all localstorage logics uses for testing purpose and use the database
 3. If order is out for the delivery then show the delivery partner details (like mobile number, name, etc.)
+4. On track order page make invoice & support button functional
+5. Add the cancelation logic & cancel button on the track order page

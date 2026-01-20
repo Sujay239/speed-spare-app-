@@ -1,0 +1,271 @@
+/* --- Auth Page Styles --- */
+body {
+  background-color: #f8fafc;
+}
+
+.auth-container {
+  width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
+  padding: 20px;
+  box-shadow: none;
+}
+
+/* Header */
+.auth-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 60px;
+}
+
+.back-btn {
+  position: absolute;
+  left: 20px;
+  color: #1e293b;
+  font-size: 20px;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.back-btn:active {
+  background: #f1f5f9;
+}
+
+.auth-logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 0;
+}
+
+.auth-logo span {
+  color: #10c05d;
+}
+
+/* Content */
+.auth-content {
+  padding: 5px 0px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-text h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 10px 0 5px;
+}
+
+.welcome-text p {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+/* Tab Switcher */
+.auth-tabs {
+  display: flex;
+  background: #f1f5f9;
+  padding: 5px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #64748b;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s;
+}
+
+.tab-btn.active {
+  color: #1e293b;
+}
+
+/* Animated Slider Background */
+.tab-slider {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(50% - 5px);
+  height: calc(100% - 10px);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+/* Form Styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px 16px 16px 45px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.2s;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.form-input:focus {
+  background: white;
+  border-color: #10c05d;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(16, 192, 93, 0.1);
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.form-input:focus + .input-icon {
+  color: #10c05d;
+}
+
+/* Action Buttons */
+.auth-submit-btn {
+  background: #10c05d;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 8px 20px rgba(16, 192, 93, 0.25);
+  transition: transform 0.1s;
+}
+
+.auth-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Utility Links */
+.forgot-pass {
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.forgot-pass a {
+  color: #10c05d;
+  text-decoration: none;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+/* Social Buttons */
+.social-login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.social-btn:hover {
+  background: #f8fafc;
+}
+
+.social-btn i {
+  font-size: 18px;
+}
+
+.google-btn i {
+  color: #db4437;
+}
+.facebook-btn i {
+  color: #4267b2;
+}
+
+/* Hidden state for logic */
+.hidden {
+  display: none !important;
+}

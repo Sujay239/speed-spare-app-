@@ -74,6 +74,11 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Delivery Partner Info (Dynamic) -->
+                <div id="delivery-partner-section" class="delivery-partner-section" style="display: none;">
+                    <!-- Rendered by JS -->
+                </div>
             </section>
 
             <!-- Items Section -->
@@ -119,10 +124,10 @@
 
             <!-- Order Actions -->
             <div class="order-actions-grid">
-                <button class="action-btn invoice">
+                <button class="action-btn invoice" onclick="downloadInvoice(this)">
                     <i class="fa-solid fa-file-invoice"></i> Invoice
                 </button>
-                <button class="action-btn support">
+                <button class="action-btn support" onclick="window.location.href='help.php'">
                     <i class="fa-solid fa-headset"></i> Support
                 </button>
             </div>
@@ -132,11 +137,119 @@
                 <a href="#" class="cancel-link">Cancel Order</a>
                 <p class="cancel-note">Not eligible for cancel the order now</p>
             </div>
+            <!-- Review Modal -->
+            <div id="review-modal" class="modal-overlay" style="display: none;">
+                <div class="modal-content review-modal-content">
+                    <div class="modal-header">
+                        <h3>Write a Review</h3>
+                        <span class="close-modal" onclick="closeReviewModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="review-product-info">
+                            <img id="review-img" src="" alt="Product" class="review-thumb">
+                            <span id="review-name">Product Name</span>
+                        </div>
+                        
+                        <div class="star-rating-container">
+                            <p>Rate this product</p>
+                            <div class="stars" id="star-container">
+                                <i class="fa-regular fa-star" data-value="1" onclick="setRating(1)"></i>
+                                <i class="fa-regular fa-star" data-value="2" onclick="setRating(2)"></i>
+                                <i class="fa-regular fa-star" data-value="3" onclick="setRating(3)"></i>
+                                <i class="fa-regular fa-star" data-value="4" onclick="setRating(4)"></i>
+                                <i class="fa-regular fa-star" data-value="5" onclick="setRating(5)"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Your Review</label>
+                            <textarea id="review-desc" class="form-textarea" placeholder="Tell us what you liked or disliked..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Add Images (Optional)</label>
+                            <div class="custom-file-upload">
+                                <input type="file" id="review-imgs" multiple accept="image/*" class="hidden-input" onchange="handleReviewFiles(this)">
+                                <label for="review-imgs" class="upload-box">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </div>
+                                    <div class="text-box">
+                                        <span class="upload-title">Tap to Upload</span>
+                                        <span class="upload-desc">Max 5 images</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div id="review-imgs-preview" class="review-imgs-preview"></div>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button class="cancel-btn" onclick="closeReviewModal()">Cancel</button>
+                            <button class="save-btn" onclick="submitReview()">Submit Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Return Modal -->
+            <div id="return-modal" class="modal-overlay" style="display: none;">
+                <div class="modal-content review-modal-content">
+                    <div class="modal-header">
+                        <h3>Return Item</h3>
+                        <span class="close-modal" onclick="closeReturnModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="review-product-info">
+                            <img id="return-img" src="" alt="Product" class="review-thumb">
+                            <span id="return-name">Product Name</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Reason for Return</label>
+                            <select id="return-reason" class="form-control">
+                                <option value="">Select a reason</option>
+                                <option value="damaged">Product Damaged</option>
+                                <option value="wrong_item">Received Wrong Item</option>
+                                <option value="size_issue">Size/Fit Issue</option>
+                                <option value="quality">Quality Not as Expected</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="return-desc" class="form-textarea" placeholder="Please describe the issue..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload Images (Mandatory)</label>
+                            <p class="upload-desc" style="color: #ef4444; margin-bottom: 8px;">At least 1 image required</p>
+                            <div class="custom-file-upload">
+                                <input type="file" id="return-imgs" multiple accept="image/*" class="hidden-input" onchange="handleReturnFiles(this)">
+                                <label for="return-imgs" class="upload-box">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </div>
+                                    <div class="text-box">
+                                        <span class="upload-title">Tap to Upload</span>
+                                        <span class="upload-desc">Max 5 images</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div id="return-imgs-preview" class="review-imgs-preview"></div>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button class="cancel-btn" onclick="closeReturnModal()">Cancel</button>
+                            <button class="save-btn" onclick="submitReturn()">Submit Return</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <?php include 'includes/navigation.php'; ?>
     </div>
 
-    <script src="assets/JS/track_order.js"></script>
+    <script src="assets/JS/track_order.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

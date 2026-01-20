@@ -20,7 +20,7 @@
 
         <div class="orders-page">
             <div id="orders-container" class="orders-container">
-                <!-- Loader during data fetch -->
+
                 <div class="orders-loader">
                     <div class="spinner"></div>
                     <p>Fetching your orders...</p>
@@ -29,7 +29,7 @@
         </div>
 
 <?php
-// Include navigation but ensure it reflects the active "Orders" state
+
 include 'includes/navigation.php';
 ?>
 

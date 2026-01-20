@@ -1,0 +1,397 @@
+/* --- Account Page Styles --- */
+
+.account-container {
+  padding: 20px;
+  padding-bottom: 80px; /* Space for navbar */
+}
+
+/* Header */
+.account-header {
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+.account-header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 0;
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  margin-bottom: 30px;
+  border: 1px solid #f1f5f9;
+}
+
+.avatar-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.avatar-frame {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #f1f5f9;
+}
+
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-icon-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: #f97316;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 5px;
+}
+
+.profile-meta {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Menu List */
+/* Menu Grid */
+.account-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 24px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  text-align: center;
+}
+
+.menu-item:active {
+  background: #f8fafc;
+  transform: scale(0.96);
+}
+
+.menu-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: rgba(16, 192, 93, 0.1);
+  color: #10c05d; /* Primary Green */
+  margin-bottom: 12px;
+}
+
+.menu-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  flex: none; /* Reset flex-grow */
+}
+
+/* Hide Arrow in Grid Mode */
+.menu-arrow {
+  display: none;
+}
+
+/* Specific Menu Styles */
+.menu-item.logout {
+  grid-column: span 2; /* Full width for logout */
+  margin-top: 10px;
+  border: 1px solid #fee2e2;
+  flex-direction: row; /* Keep logout horizontal */
+  gap: 15px;
+  padding: 18px 20px;
+}
+
+.menu-item.logout .menu-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  background: #fef2f2;
+  color: #ef4444;
+  margin-bottom: 0;
+}
+
+.menu-item.logout .menu-text {
+  color: #ef4444;
+  text-align: left;
+  flex: 1;
+}
+
+/* Edit Modal */
+.edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.edit-modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  background: #f8fafc;
+  color: #1e293b;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #f97316;
+  background: white;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+.cancel-btn {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.save-btn {
+  background: #f97316;
+  color: white;
+}
+
+/* Address List */
+#address-list-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.address-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: #f8fafc;
+}
+
+.addr-icon {
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.addr-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.addr-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f97316;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.addr-text {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.add-new-btn {
+  width: 100%;
+  padding: 14px;
+  background: #f1f5f9;
+  color: #334155;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.add-new-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Expanded Form Styles */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.type-selection {
+  display: flex;
+  gap: 12px;
+}
+
+.type-btn {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-btn:hover {
+  background: #e2e8f0;
+}
+
+.type-btn.active {
+  background: #f97316;
+  border-color: #f97316;
+  color: white;
+}
+
+/* Ensure inputs in a row don't overflow */
+.form-row .form-group {
+  margin-bottom: 0;
+}

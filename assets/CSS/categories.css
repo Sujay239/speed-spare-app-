@@ -1,0 +1,123 @@
+/* --- Categories Page Styles --- */
+
+.categories-container {
+  padding: 0 20px 20px;
+}
+
+.categories-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+}
+
+.categories-header h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 0;
+}
+
+.back-link {
+  color: #1a202c;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* Category Grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.category-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f1f5f9;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  min-height: 110px;
+}
+
+.category-card:active {
+  transform: scale(0.96);
+}
+
+.cat-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.cat-icon-box i {
+  font-size: 22px;
+  color: #f97316; /* Primary Orange */
+}
+
+/* Specific Colors for Icons (Optional for variety) */
+.category-card:nth-child(1) .cat-icon-box i {
+  color: #f97316;
+  background: #fff7ed;
+}
+.category-card:nth-child(2) .cat-icon-box i {
+  color: #ef4444;
+  background: #fef2f2;
+}
+.category-card:nth-child(3) .cat-icon-box i {
+  color: #eab308;
+  background: #fefce8;
+}
+.category-card:nth-child(4) .cat-icon-box i {
+  color: #22c55e;
+  background: #f0fdf4;
+}
+.category-card:nth-child(5) .cat-icon-box i {
+  color: #06b6d4;
+  background: #ecfeff;
+}
+.category-card:nth-child(6) .cat-icon-box i {
+  color: #3b82f6;
+  background: #eff6ff;
+}
+.category-card:nth-child(7) .cat-icon-box i {
+  color: #6366f1;
+  background: #eef2ff;
+}
+.category-card:nth-child(8) .cat-icon-box i {
+  color: #a855f7;
+  background: #faf5ff;
+}
+.category-card:nth-child(9) .cat-icon-box i {
+  color: #ec4899;
+  background: #fdf2f8;
+}
+
+.cat-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+}
+
+.cat-count {
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 4px;
+  font-weight: 500;
+}

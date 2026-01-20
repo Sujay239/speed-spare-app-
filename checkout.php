@@ -236,7 +236,7 @@
                     </div>
 
                     <div class="success-footer-actions">
-                        <button onclick="alert('Tracking coming soon!')" class="track-btn">Track Order</button>
+                        <button id="success-track-btn" class="track-btn">Track Order</button>
                         <button onclick="window.location.href='index.php'" class="continue-btn">Continue Shopping</button>
                     </div>
                 </div>
