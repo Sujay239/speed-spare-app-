@@ -1,0 +1,3 @@
+1. Authentication (Without logged in no user able to access the indx page)
+2. Remove all localstorage logics uses for testing purpose and use the database
+3. If order is out for the delivery then show the delivery partner details (like mobile number, name, etc.)

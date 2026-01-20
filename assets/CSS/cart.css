@@ -1,0 +1,221 @@
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: white;
+}
+
+.cart-header h2 {
+  font-size: 22px; /* Scaled up */
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.back-btn,
+.more-btn {
+  width: 48px; /* Scaled up */
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #f0f0f0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  font-size: 20px; /* Scaled up */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart-content {
+  padding: 15px 24px 80px; /* Increased padding */
+  background: white;
+  min-height: calc(100dvh - 130px);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Increased gap */
+  margin-bottom: 40px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 18px; /* Increased gap */
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.cart-item .img-box {
+  width: 110px; /* Scaled up */
+  height: 110px;
+  background: #f8f8f8;
+  border-radius: 24px; /* More rounded */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  flex-shrink: 0;
+}
+
+.cart-item .img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-title {
+  font-size: 18px; /* Scaled up */
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.item-variant {
+  font-size: 14px; /* Scaled up */
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+.item-price-qty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-price {
+  font-size: 19px; /* Scaled up */
+  font-weight: 900;
+  color: var(--text-dark);
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Increased gap */
+}
+
+.qty-btn {
+  width: 38px; /* Scaled up */
+  height: 38px;
+  border-radius: 12px;
+  border: 1.5px solid #eee;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px; /* Scaled up */
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.qty-btn.plus {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+.qty-btn:active {
+  transform: scale(0.9);
+}
+
+.qty-val {
+  font-size: 16px; /* Scaled up */
+  font-weight: 800;
+}
+
+.remove-item {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  color: #ccc;
+  font-size: 22px; /* Scaled up */
+  cursor: pointer;
+}
+
+/* Summary */
+
+.order-summary {
+  position: fixed; /* Or sticky */
+  bottom: 140px; /* Adjust based on your bottom nav height */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  padding: 24px; /* Increased padding */
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+  z-index: 99;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px; /* Scaled up */
+  font-weight: 700;
+  color: #888;
+  margin: 8px 0;
+}
+
+.summary-row span:last-child {
+  color: var(--text-dark);
+  font-weight: 800;
+}
+
+.summary-row.savings span:last-child {
+  color: var(--primary-green);
+}
+
+.summary-row.total {
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px dashed #eee;
+  font-size: 18px; /* Scaled up */
+  color: var(--text-dark);
+}
+
+.summary-row.total span:last-child {
+  font-size: 22px; /* Scaled up */
+  font-weight: 900;
+}
+
+/* Footer */
+.checkout-footer {
+  position: fixed;
+  bottom: 65px; /* Above nav */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  background: white;
+  z-index: 100;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 20px; /* Increased padding */
+  font-size: 18px; /* Scaled up */
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(16, 192, 93, 0.25);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.checkout-btn:active {
+  transform: scale(0.98);
+}

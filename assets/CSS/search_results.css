@@ -1,0 +1,258 @@
+.search-results-page {
+  background: #f8f8f8;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* Filter Bar Wrapper (Sticky) */
+.filter-wrapper {
+  position: sticky;
+  top: 68px; /* Perfectly aligns with collapsed header */
+  z-index: 100;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filter-bar {
+  display: flex;
+  padding: 12px 16px;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-item {
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  border: 1px solid var(--primary-green);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.filter-item.active {
+  background: var(--primary-green);
+  color: white;
+  border-color: var(--primary-green);
+}
+
+/* Sort & Filter Dropdown Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: none;
+  opacity: 0;
+  transition: 0.3s;
+}
+.overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  z-index: 201;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 24px;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.bottom-sheet.show {
+  bottom: 0;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.sheet-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.close-sheet {
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+}
+
+.option-list {
+  list-style: none;
+}
+.option-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+}
+.option-item i {
+  color: var(--primary-green);
+  display: none;
+}
+.option-item.selected {
+  color: var(--primary-green);
+}
+.option-item.selected i {
+  display: block;
+}
+
+.result-info {
+  padding: 16px;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+.result-info span {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Flipkart Style List Layout */
+.search-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: #eee;
+}
+
+.search-item {
+  background: white;
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  position: relative;
+}
+
+.search-item .img-box {
+  width: 120px;
+  height: 120px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.search-item .img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.search-item .details-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-item .product-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.search-item .price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.search-item .action-box {
+  margin-left: 10px;
+}
+
+.search-item .new-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.search-item .old-price {
+  font-size: 14px;
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.search-item .discount-badge {
+  color: #10c05d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.search-item .rating-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.search-item .rating-star {
+  background: #10c05d;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #ccc;
+  font-size: 18px;
+}
+.wishlist-icon.active {
+  color: #ff3b30;
+}
+
+.no-results {
+  text-align: center;
+  padding: 100px 30px;
+}
+.no-results i {
+  font-size: 60px;
+  color: #eee;
+  margin-bottom: 20px;
+}
