@@ -36,16 +36,6 @@ include 'includes/navigation.php';
     </div>
 
     <script src="assets/JS/orders.js?v=<?php echo time(); ?>"></script>
-    <script>
-        // Ensure the navigation item for Orders is active
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-                if(item.getAttribute('href') === 'orders.php') {
-                    item.classList.add('active');
-                }
-            });
-        });
-    </script>
+
 </body>
 </html>

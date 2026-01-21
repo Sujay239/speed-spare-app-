@@ -31,7 +31,7 @@
             <section class="categories-section">
                 <div class="section-header">
                     <h3>Categories</h3>
-                    <a href="#" class="see-all">See all</a>
+                    <a href="categories.php" class="see-all">See all</a>
                 </div>
                 <div class="categories-scroll" id="categories-container">
                     <!-- JS Rendered -->

@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Delivery Partner Info (Dynamic) -->
                 <div id="delivery-partner-section" class="delivery-partner-section" style="display: none;">
                     <!-- Rendered by JS -->
@@ -149,7 +149,7 @@
                             <img id="review-img" src="" alt="Product" class="review-thumb">
                             <span id="review-name">Product Name</span>
                         </div>
-                        
+
                         <div class="star-rating-container">
                             <p>Rate this product</p>
                             <div class="stars" id="star-container">
@@ -247,7 +247,7 @@
             </div>
         </div>
 
-        <?php include 'includes/navigation.php'; ?>
+
     </div>
 
     <script src="assets/JS/track_order.js?v=<?php echo time(); ?>"></script>

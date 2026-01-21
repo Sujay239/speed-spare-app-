@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="review-text">Genuine product and very fast delivery. The packaging was also top-notch.</p>
                     </div>
 
-                    <a href="#" class="see-all-reviews">See all 117 reviews</a>
+                    <a href="reviews.php?producctid=${product.id}" class="see-all-reviews">See all ${product.reviews || "117"} reviews</a>
 
                     <div class="related-products-section">
                         <h3 class="section-title">You might also like</h3>

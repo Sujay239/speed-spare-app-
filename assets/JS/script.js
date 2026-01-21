@@ -340,16 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     renderAllProducts();
 
-    // --- Bottom Nav Pulse ---
-    const navLinks = document.querySelectorAll('.nav-item');
-    const currentPath = window.location.pathname.split("/").pop();
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        if (linkPath === currentPath) {
-            navLinks.forEach(n => n.classList.remove('active'));
-            link.classList.add('active');
-        }
-    });
+
 
     // Update cart count from localStorage
     const cart = JSON.parse(localStorage.getItem('speed_spare_cart')) || [];
